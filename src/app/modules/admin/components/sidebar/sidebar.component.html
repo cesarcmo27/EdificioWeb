@@ -1,0 +1,61 @@
+
+
+
+<div >
+
+
+<mat-drawer-container autosize >
+    <mat-drawer #drawer opened="true" mode="side" position="start" class="fondo">
+    <mat-nav-list >
+        <mat-list-item  >
+            <button routerLink="news" mat-button class="fondo"><mat-icon>home</mat-icon> Noticias</button>
+        </mat-list-item>
+        <mat-expansion-panel class="fondo">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-icon>add_circle</mat-icon> Mantenimiento
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ng-template matExpansionPanelContent >
+              <mat-nav-list >
+                <mat-list-item>
+                  <button mat-button routerLink="/edificio"><mat-icon>layers</mat-icon> Edificio</button>
+                </mat-list-item>
+                <mat-list-item>
+                  <button mat-button routerLink="/admin/mantenimiento/departamento"><mat-icon>apartment</mat-icon> Departamento</button>
+                </mat-list-item>
+                <mat-list-item>
+                  <button mat-button routerLink="/categoria"><mat-icon>category</mat-icon> Categoria</button>
+                </mat-list-item>
+                <mat-list-item>
+                  <button mat-button routerLink="/plantilla"><mat-icon>description</mat-icon> Plantilla</button>
+                </mat-list-item>
+                <mat-list-item>
+                  <button routerLink="/carga-archivo" mat-button><mat-icon>cloud_upload</mat-icon> Carga de Archivo</button>
+                </mat-list-item>
+              </mat-nav-list>
+            </ng-template>
+          </mat-expansion-panel>
+        <mat-list-item class="fondo">
+            <button routerLink="/recibo" mat-button class="fondo"><mat-icon>explore</mat-icon> Recibo</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button routerLink="table" mat-button class="fondo"><mat-icon>table</mat-icon> Table</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button class="fondo"><mat-icon>home</mat-icon> home</button>
+        </mat-list-item>
+        <mat-list-item>
+            <button mat-button class="fondo"><mat-icon>help</mat-icon> Help</button>
+        </mat-list-item>
+    </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;height: 600px;">
+
+          <router-outlet></router-outlet>
+            </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+
+</div>

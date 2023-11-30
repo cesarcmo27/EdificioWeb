@@ -1,0 +1,74 @@
+<div style="width: 70%;margin: 40px auto;">
+    <h1>
+        Lista Departamentos
+    </h1>
+
+    <button mat-raised-button color="primary" (click)="openDialog()">Nuevo</button>
+    <br/>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <!--ng-container matColumnDef="Id">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+          </ng-container -->
+        
+          <ng-container matColumnDef="Bloque">
+            <th mat-header-cell *matHeaderCellDef> bloque </th>
+            <td mat-cell *matCellDef="let element"> {{element.block}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="Nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>
+            <td mat-cell *matCellDef="let element"> {{element.statusName}} </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Piso">
+            <th mat-header-cell *matHeaderCellDef> Piso </th>
+            <td mat-cell *matCellDef="let element"> {{element.floor}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="MetroCuadrado">
+            <th mat-header-cell *matHeaderCellDef> M2 </th>
+            <td mat-cell *matCellDef="let element"> {{element.area}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="Porcentaje">
+            <th mat-header-cell *matHeaderCellDef> Porcentaje </th>
+            <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
+          </ng-container>
+      
+         
+          <ng-container matColumnDef="Acciones">
+            <th mat-header-cell *matHeaderCellDef style="width: 20px;" > </th>
+            <td mat-cell *matCellDef="let element">
+              <button mat-icon-button color = "primary" (click)="EditarDepartamento(element)">
+                <mat-icon>edit</mat-icon>
+              </button>  
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+      
+</div>

@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button  aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My Building</span>
+  <span class="example-spacer"></span>
+  <span class="spacer"></span>
+  <div class="user-notif-wrapper">
+  
+      <button mat-icon-button aria-label="Notificaciones">
+          <mat-icon matBadge="2" matBadgeColor="warn">home</mat-icon>
+        </button>
+      
+      <button mat-icon-button  [matMenuTriggerFor]="menu" aria-label="Usuario Logueado" >
+          <mat-icon>person</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Mis Datos</button>
+          <button mat-menu-item>Cerrar Sesion</button>
+        </mat-menu>
+  </div>
+  
+</mat-toolbar>

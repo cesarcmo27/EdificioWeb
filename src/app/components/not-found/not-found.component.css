@@ -1,0 +1,36 @@
+/* not-found.component.css */
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #f44336; /* Color de encabezado personalizado */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #1976D2; /* Color de fondo personalizado para el botón */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #1565C0; /* Cambio de color al pasar el ratón por encima */
+  }
+  

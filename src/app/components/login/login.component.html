@@ -1,0 +1,28 @@
+<div class="fondo">
+    <div class="center">
+        <h1>Login</h1>
+        <div class="title-icon-container">
+          <mat-icon matBadge="2" matBadgeColor="warn">home</mat-icon>
+        
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="txt_field">
+            <input type="text" required formControlName="email">
+            <span></span>
+            <label>Email</label>
+          </div>
+          <div class="txt_field">
+            <input type="password" required formControlName="password">
+            <span></span>
+            <label>Password</label>
+          </div>
+          <div class="pass"><a routerLink="../forgot-password">Forgot Password?</a></div>
+          <input type="submit" value="Login">
+          <div class="signup_link">
+           Welcome
+          </div>
+        </form>
+    </div>
+</div>
+
+

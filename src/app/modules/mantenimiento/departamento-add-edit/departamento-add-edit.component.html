@@ -1,0 +1,63 @@
+
+<h1 mat-dialog-title>{{tituloAccion}} Departamento</h1>
+<form class="apartment-form" [formGroup]="formDepartamento">
+  <div mat-dialog-content>
+   
+      <mat-form-field class="apartment-full-width">
+        <mat-label>Edificio (disabled)</mat-label>
+        <input matInput  value="nombre de Edificio">
+      </mat-form-field>
+
+      <table class="apartment-full-width" cellspacing="0">
+        <tr>
+          <td><mat-form-field class="apartment-full-width">
+              <mat-label>Bloque</mat-label>
+              <input matInput formControlName="Bloque" autocomplete="off">
+            </mat-form-field></td>
+
+        </tr>
+        <tr>
+          <td><mat-form-field class="apartment-full-width">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="Nombre">
+            </mat-form-field></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="apartment-full-width">
+            <mat-label>Estado</mat-label>
+            <mat-select formControlName="Estado">
+              <mat-option *ngFor="let depa of apartmentState" [value]="depa.value">
+                {{depa.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+            <p> Estado seleccionado : {{selectedValue}} </p>
+          </td>
+        </tr>
+      </table>
+
+      <table class="apartment-half-width" cellspacing="0">
+        <tr>
+          <td><mat-form-field class="apartment-numbers-width">
+              <mat-label>Piso</mat-label>
+              <input matInput placeholder="Numero del piso" formControlName="piso" type="number">
+            </mat-form-field></td>
+          <td><mat-form-field class="apartment-numbers-width">
+              <mat-label>Area</mat-label>
+              <input matInput placeholder="Mt2" formControlName="metrocuadrado" type="number">
+            </mat-form-field></td>
+          <td><mat-form-field class="apartment-numbers-width">
+              <mat-label>Porcentaje</mat-label>
+              <input matInput #postalCode maxlength="5" placeholder="Ex. 0.3" value="1" formControlName="Porcentaje" type="number">
+              
+            </mat-form-field></td>
+        </tr>
+      </table>
+   
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button  color="primary" (click)="addEditApartamento()" [disabled]="formDepartamento.invalid">{{botonAccion}}</button>
+  </div>
+</form>
